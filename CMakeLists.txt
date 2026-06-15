@@ -18,6 +18,9 @@ qt_add_qml_module(appclicker
         Main.qml
         QML_FILES LaptopUI.qml
         SOURCES Laptop.h Laptop.cpp
+        SOURCES
+        SOURCES store.h store.cpp
+        QML_FILES StoreUI.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

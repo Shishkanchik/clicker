@@ -2,17 +2,13 @@ import QtQuick
 
 Rectangle {
     id:root
-
-    width: 120
-    height: 80
+    width: 200
+    height:40
     color: "gray"
-    signal clicked
 
     MouseArea {
-
         anchors.fill: parent
-        onClicked: {
-            root.clicked()
-        }
+        onClicked: store.buy(laptop, 0)
     }
+
 }
