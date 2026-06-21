@@ -10,11 +10,18 @@ class Store : public QObject
 public:
     explicit Store(QObject *parent = nullptr);
     Q_INVOKABLE void buy(Laptop* laptop, int item);
+    Q_INVOKABLE int getCost(int number);
+    Q_INVOKABLE int getPower(int number);
 private:
-    enum Item
+
+    struct Item
     {
-        MOUSE
+        int id;
+        int cost;
+        int power;
     };
+
+    QVector<Item> storeItems;
 
 signals:
 };

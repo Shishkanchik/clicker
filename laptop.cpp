@@ -6,16 +6,25 @@ Laptop::Laptop(QObject *parent)
 
 void Laptop::addClick()
 {
-    countClick += powerClick;
-    qDebug() << countClick;
+    m_countClick += m_powerClick;
+
+    emit clicksChanged();
+    qDebug() << m_countClick;
 }
 
-QString Laptop::getClick()
+int Laptop::clicks() const
 {
-    return QString::number(countClick);
+    return m_countClick;
 }
 
-void Laptop::upgradeClick(int upgrade)
+void Laptop::upgrade(int power, int cost)
 {
-    powerClick += upgrade;
+    m_powerClick += power;
+    m_countClick -= cost;
+    emit clicksChanged();
+}
+
+int Laptop::getCountClick()
+{
+    return m_countClick;
 }
